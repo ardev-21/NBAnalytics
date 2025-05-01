@@ -1,9 +1,4 @@
-
-
-
-
-
-
+USE NBAnalytics;
 
 /*
 DROP TABLE Player;
@@ -318,7 +313,7 @@ player3_id INT FOREIGN KEY REFERENCES Player(id),
 player3_team_id INT FOREIGN KEY REFERENCES Team(id),
 )
 
-CREATE TABLE Line_score (
+CREATE TABLE line_score (
 game_date_est DATETIME,
 game_sequence INT,
 game_id INT PRIMARY KEY FOREIGN KEY REFERENCES Game(game_id),
@@ -351,3 +346,5 @@ pts_ot3_away int,
 pts_ot4_away int,
 pts_away int
 )
+
+
