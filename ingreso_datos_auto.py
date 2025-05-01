@@ -189,7 +189,7 @@ def procesar_play_by_play(file_path):
     play_by_play_clutch.drop(delete_columns, axis=1, inplace=True) 
     delete_columns = ["eventnum", "period", "wctimestring"]
     play_by_play_clutch.drop(delete_columns, axis=1, inplace=True)
-    return play_by_play
+    return play_by_play_clutch
     
 # Monitoreo de archivos
 class Watcher:
