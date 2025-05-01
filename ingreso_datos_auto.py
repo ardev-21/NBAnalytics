@@ -230,7 +230,35 @@ class Handler(FileSystemEventHandler):
                 df = procesar_common_player_info(file_path)
             elif file_name == 'draft_combine_stats.csv':
                 df = procesar_draft_combine_stats(file_path)
-
+            elif file_name == 'draft_history.csv':
+                df = procesar_draft_history(file_path)
+            elif file_name == 'game_info.csv':
+                df = procesar_game_info(file_path)
+            elif file_name == 'game_summary.csv':
+                df = procesar_game_summary(file_path)
+            elif file_name == 'game.csv':
+                df = procesar_game(file_path)
+            elif file_name == 'inactive_players.csv':
+                df = procesar_inactive_players(file_path)
+            elif file_name == 'line_score.csv':
+                df = procesar_line_score(file_path)
+            elif file_name == 'officials.csv':
+                df = procesar_officials(file_path)
+            elif file_name == 'other_stats.csv':
+                df = procesar_other_stats(file_path)
+            elif file_name == 'play_by_play.csv':
+                df = procesar_play_by_play(file_path)
+            elif file_name == 'player.csv':
+                df = procesar_player(file_path)
+            elif file_name == 'team_details.csv':
+                df = procesar_team_details(file_path)
+            elif file_name == 'team_history.csv':
+                df = procesar_team_history(file_path)
+            elif file_name == 'team_info_common.csv':
+                df = procesar_team_info_common(file_path)
+            elif file_name == 'team.csv':
+                df = procesar_team(file_path)
+           
             
             if df is not None:
                 # Cargar el df a SQL Server
