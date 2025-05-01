@@ -318,7 +318,7 @@ player3_id INT FOREIGN KEY REFERENCES Player(id),
 player3_team_id INT FOREIGN KEY REFERENCES Team(id),
 )
 
-CREATE TABLE line_score (
+CREATE TABLE Line_score (
 game_date_est DATETIME,
 game_sequence INT,
 game_id INT PRIMARY KEY FOREIGN KEY REFERENCES Game(game_id),
