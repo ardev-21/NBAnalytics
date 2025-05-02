@@ -19,33 +19,46 @@ PASSWORD = os.getenv("PASSWORD")
 DRIVER = os.getenv("DRIVER")
 
 # Directorio de los archivos a monitorear
-DIRECTORY= 'C:/Users/Desktop/Desktop/Proyecto final Henry/Monitoreo'
-PROCESADOS_DIR = os.path.join(DIRECTORY, 'archivos_procesados')
+DIRECTORY= 'C:/Users/Desktop/Desktop/Proyecto final Henry/csv'
+#PROCESADOS_DIR = os.path.join(DIRECTORY, 'archivos_procesados')
 
 # Asegura que la carpeta 'archivos_procesados' exista
-os.makedirs(PROCESADOS_DIR, exist_ok=True)
+#os.makedirs(PROCESADOS_DIR, exist_ok=True)
 
 # conexion y carga a la base de datos
 def get_connection():
-    print(f"🗄️🟢 Estableciendo Conexión a la Base de Datos")
+    print(f"🗄️ 🟢 Estableciendo Conexión a la Base de Datos")
     connection_string = f"mssql+pyodbc://{USER}:{PASSWORD}@{SERVER}/{DATABASE}?driver={DRIVER}"
     engine = create_engine(connection_string)
     return engine
+
+def verificar_datos_nuevos(df, nombre_tabla):
+    engine = get_connection()
+    # Filtrando el df para cargar solamente datos nuevos
+    ids_existentes = pd.read_sql(f"SELECT id FROM {nombre_tabla}", engine)
+    ids_set = set(ids_existentes['id'])
+    df_nuevos = df[~df['id'].isin(ids_set)]
+    return df_nuevos
 
 def cargar_a_sql(df, nombre_archivo):
     try:
         nombre_tabla = nombre_archivo.split('.')[0]
         nombre_tabla = nombre_tabla.capitalize()
         engine = get_connection()
-        df.to_sql(nombre_tabla, con=engine, if_exists='append', index=False)
-        print(f"🗄️✅ Datos cargados a la tabla {nombre_tabla}")
+        # Verificar si existen nuevos registros
+        df_nuevos = verificar_datos_nuevos(df, nombre_tabla)
+        if len(df_nuevos) > 0:
+            df_nuevos.to_sql(nombre_tabla, con=engine, if_exists='append', index=False)
+            print(f"🗄️ ✅ Datos cargados a la tabla {nombre_tabla}")
+        else:
+            print(f"🗄️ ✅ No hay nuevos registros para agregar en la tabla {nombre_tabla}")
     except SQLAlchemyError as e:
         print(f'Error en la Base de datos: {e}')
 
-def mover_archivo_procesado(file_name, file_path):
-    nuevo_path = os.path.join(PROCESADOS_DIR, file_name)
-    shutil.move(file_path, nuevo_path)
-    print(f"➡️📦 Archivo movido a {nuevo_path}") 
+# def mover_archivo_procesado(file_name, file_path):
+#     nuevo_path = os.path.join(PROCESADOS_DIR, file_name)
+#     shutil.move(file_path, nuevo_path)
+#     print(f"➡️📦 Archivo movido a {nuevo_path}") 
     
     
     
@@ -315,7 +328,7 @@ class Handler(FileSystemEventHandler):
             file_path = event.src_path
             file_name = os.path.basename(file_path)
             current_time = time.time()
-            print(f'👀 Modificación en archivo: {file_name}')
+            print(f'⚠️ Monitoreando archivos en el directorio: {DIRECTORY}')
             
              # Si fue procesado hace menos de 10 segundos, lo ignoramos
             if file_name in Handler.processed_files:
@@ -325,48 +338,63 @@ class Handler(FileSystemEventHandler):
             
             # Llama a la función de limpieza/carga correspondiente
             if file_name == 'common_player_info.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_common_player_info(file_path)
             elif file_name == 'draft_combine_stats.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_draft_combine_stats(file_path)
             elif file_name == 'draft_history.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_draft_history(file_path)
             elif file_name == 'game_info.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_game_info(file_path)
             elif file_name == 'game_summary.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_game_summary(file_path)
             elif file_name == 'game.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_game(file_path)
             elif file_name == 'inactive_players.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_inactive_players(file_path)
             elif file_name == 'line_score.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_line_score(file_path)
             elif file_name == 'officials.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_officials(file_path)
             elif file_name == 'other_stats.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_other_stats(file_path)
             elif file_name == 'play_by_play.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_play_by_play(file_path)
             elif file_name == 'player.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_player(file_path)
             elif file_name == 'team_details.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_team_details(file_path)
             elif file_name == 'team_history.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_team_history(file_path)
             elif file_name == 'team.csv':
+                print(f'👀 Modificación en archivo: {file_name}')
                 print(f'📦🔺 Procesando archivo: {file_name}')
                 df = procesar_team(file_path)
            
@@ -377,7 +405,7 @@ class Handler(FileSystemEventHandler):
                 current_time = time.time()
                 Handler.processed_files[file_name] = current_time
                 # Mover el archivo procesado
-                mover_archivo_procesado(file_name, file_path)
+                #mover_archivo_procesado(file_name, file_path)
                  
         
 if __name__ == '__main__':
