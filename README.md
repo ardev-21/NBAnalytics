@@ -43,7 +43,7 @@ El propósito principal de este proyecto se enfoca en el ámbito del deporte pro
 - Creación instancia con Amazon RDS
 - Creación base de datos en Amazon RDS
 - Análisis Exploratorio de Datos (EDA) “tratamiento de la base de datos en Python”
-- Extracción, Transformación y Carga de datos (ETL) “carga de datos en GCP”
+- Extracción, Transformación y Carga de datos (ETL) “Amazon RDS”
 - Automatización de ingesta de datos
 - Mockup
 
