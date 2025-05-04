@@ -35,6 +35,7 @@ El propósito principal de este proyecto se enfoca en el ámbito del deporte pro
   - time
   - watchdog
   - dotenv
+  - kaggle
 - Jupyter Notebook
 
 ## 👨‍💻 Metodologías:
@@ -84,3 +85,23 @@ El propósito principal de este proyecto se enfoca en el ámbito del deporte pro
 
 - Visualizar y entender los datos de manera más efectiva, facilitando la identificación de oportunidades de mejora y la implementación de estrategias más eficientes para la elección de futuros jugadores.
 - Dar un panorama detallado de cómo va ser el resultado final de la propuesta.
+
+### Modelado de datos en DAX:
+
+- Crear de columnas calculadas.
+- Definir medidas
+- Gestionar Relaciones
+
+### Dashboards
+
+- 
+
+## 🚀Conclusiones:
+
+### 
+
+- 
+
+ <!--Intro end-->
+
+<!--Intro end-->
