@@ -8,7 +8,7 @@
 <!--horizontal divider(gradiant)-->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-# ¡Hola! 👋 DAS - Data Analytics Solution 👨‍💻 Un Equipo de 5 Analistas de Datos | 📊 Nahuel - Ariel - Frank - Mariano - Carlos.
+# ¡Hola! 👋 DAS - Data Analytics Athletic 👨‍💻 Un Equipo de 5 Analistas de Datos | 📊 Nahuel - Ariel - Frank - Mariano - Carlos.
 
 <!--Intro start-->
 
