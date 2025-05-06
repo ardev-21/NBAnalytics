@@ -1,11 +1,11 @@
--------------------- Creación de la base de datos si no existe --------------------
+-------------------- CreaciÃ³n de la base de datos si no existe --------------------
 IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'NBAnalytics')
 BEGIN
     CREATE DATABASE NBAnalytics;
 END
 GO
 
--------------------- Selección de la base de datos --------------------
+-------------------- SelecciÃ³n de la base de datos --------------------
 USE NBAnalytics;
 GO
 
@@ -25,8 +25,9 @@ GO
 --DROP TABLE Game; -- 13
 --DROP TABLE Team; -- 14
 --DROP TABLE Player; -- 15
+-- DROP TABLE Salaries; -- 
 
--------------------- Creación de las tablas --------------------
+-------------------- CreaciÃ³n de las tablas --------------------
 CREATE TABLE Player (
 	id INT PRIMARY KEY,
 	full_name varchar(101),
@@ -306,4 +307,59 @@ CREATE TABLE Line_score (
 	pts_ot3_away int,
 	pts_ot4_away int,
 	pts_away int
+)
+
+CREATE TABLE Salaries (
+	id int PRIMARY KEY FOREIGN KEY REFERENCES Player(id),  
+	Player_name varchar(51), 
+	Salary int,  
+	Position varchar(7), 
+	Age int,  
+	Team varchar(51),
+	GP INT, 
+	GS INT, 
+	MP float,
+	FG float,
+	FGA float,
+	FG_PCT float,
+	FG3 float,
+	FG3A float,
+	FG3_PCT float,
+	FG2 float,
+	FG2A float,
+	FG2_PCT float,
+	eFG_PCT float,
+	FT float,
+	FTA float,
+	FT_PCT float,
+	ORB float,
+	DRB float,
+	TRB float,
+	AST float,
+	STL float,
+	BLK float,
+	TOV float,
+	PF float,
+	PTS float,
+	Total_minutes int, 
+	PER float,
+	TS_PCT float,
+	FG3Ar float,
+	FTr float,
+	ORB_PCT float, 
+	DRB_PCT float,
+	TRB_PCT float,
+	AST_PCT float,
+	STL_PCT float,
+	BLK_PCT float,
+	TOV_PCT float,
+	USG_PCT float,
+	OWS float,
+	DWS float,
+	WS float,
+	WS_48 float,
+	OBPM float,
+	DBPM float,
+	BPM float,
+	VORP float
 )
