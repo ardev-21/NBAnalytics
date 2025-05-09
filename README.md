@@ -18,7 +18,7 @@
 
 El propósito principal de este proyecto se enfoca en el ámbito del deporte profesional, específicamente en la NBA (Asociación Nacional de Baloncesto). En la actualidad, los equipos y analistas están inundados de datos que utilizan para evaluar el rendimiento de los jugadores, las estrategias y hacer predicciones sobre los partidos. Sin embargo, no todos los equipos cuentan con el mismo nivel de sofisticación en su análisis, lo que crea una brecha en la ventaja competitiva.
 
-**Análisis del stock del inventario de licores:** El proyecto se centra en el análisis de datos en el contexto de la NBA, donde los equipos buscan mejorar el rendimiento y la toma de decisiones a través del uso de información estadística. Aunque hay una gran disponibilidad de datos, no todos los equipos tienen las mismas capacidades analíticas, lo que genera una desigualdad en la ventaja competitiva.
+**Análisis del Basket Profesional:** El proyecto se centra en el análisis de datos en el contexto de la NBA, donde los equipos buscan mejorar el rendimiento y la toma de decisiones a través del uso de información estadística. Aunque hay una gran disponibilidad de datos, no todos los equipos tienen las mismas capacidades analíticas, lo que genera una desigualdad en la ventaja competitiva.
 
 ## 🛠 Tecnologías Usadas:
 
@@ -46,7 +46,6 @@ El propósito principal de este proyecto se enfoca en el ámbito del deporte pro
 - Análisis Exploratorio de Datos (EDA) “tratamiento de la base de datos en Python”
 - Extracción, Transformación y Carga de datos (ETL) “Amazon RDS”
 - Automatización de ingesta de datos
-- Mockup
 
 **Datos: Origen y Descripción**
 
@@ -61,14 +60,15 @@ El propósito principal de este proyecto se enfoca en el ámbito del deporte pro
 
 ### Diseño del Modelo Entidad-Relación:
 
-- **Tabla de hechos:** game
+- **Tabla de hechos:** play_by_play
 - **Tablas dimensionales:** player, team
 - **Relaciones:** 1:N entre game y player, game y team.
 - **Llaves:** Llaves primarias (PK) y foráneas (FK) garantizan consistencia.
 
 ### Limpieza y Análisis Exploratorio (EDA):
 
-- Eliminación de valores nulos, filtro desde el año 2000 en adelante y columnas innecesarias.
+- Eliminación de valores nulos y columnas innecesarias.
+- Filtro desde el año 2000 en adelante, por jugadores y equipos.
 
 ### Extracción, Transformación y Carga de datos (ETL):
 
@@ -79,29 +79,28 @@ El propósito principal de este proyecto se enfoca en el ámbito del deporte pro
 - Extracción automática de datos actualizados.
 - Optimización para análisis en tiempo real.
 - Importancia del Proceso Integración continua: Datos confiables y listos para análisis estratégico.
-- Escalabilidad: Infraestructura sólida para futuras expansiones.
-
-### Mockup:
-
-- Visualizar y entender los datos de manera más efectiva, facilitando la identificación de oportunidades de mejora y la implementación de estrategias más eficientes para la elección de futuros jugadores.
-- Dar un panorama detallado de cómo va ser el resultado final de la propuesta.
 
 ### Modelado de datos en DAX:
 
-- Crear de columnas calculadas.
-- Definir medidas
-- Gestionar Relaciones
+- Crear columnas calculadas.
+- Definir medidas.
+- Gestionar relaciones.
+- Arreglar de tipos de datos.
+- Crear tabla calendario.
 
 ### Dashboards
 
-- 
+- Insights accionables: Permite visualizar patrones que ayuden a optimizar la gestión y rendimiento deportivo de la NBA.
+- Incorporar formato personalizado en las visualizaciones como el tema, etiquetas, títulos y otros elementos de formato.
+- Creación de gráficos, tablas y otros elementos visuales.
+- Establecer la interactividad, filtros y segmentadores idóneos.
 
 ## 🚀Conclusiones:
 
-### 
+- Alto éxito en la transición de jugadores drafteados a titulares.
+- Costo por victoria promedio de la liga indica una eficiencia relativa en el gasto.
+- Las alineaciones titulares muestran un balance ofensivo sólido en términos de eficiencia de tiro y asistencias.
+- Un número significativo de lesiones históricas, con mayor incidencia en Guards y Forwards, siendo los esguinces de tobillo y dolor de rodilla las más comunes.
+- La temporada 2021-22 fue la de mayor número de lesiones registradas.
+- El dashboard ofrece una visión integral de factores como la edad del roster, desarrollo de jóvenes y rookies, estabilidad del equipo y retención de jugadores drafteados para analizar la construcción de franquicias exitosas a largo plazo.
 
-- 
-
- <!--Intro end-->
-
-<!--Intro end-->
