@@ -37,6 +37,7 @@ El propósito principal de este proyecto se enfoca en el ámbito del deporte pro
   - dotenv
   - kaggle
 - Jupyter Notebook
+- Power BI
 
 ## 👨‍💻 Metodologías:
 
