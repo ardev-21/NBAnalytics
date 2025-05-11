@@ -1,14 +1,21 @@
 <!--h2 without bottom border-->
 <div id="user-content-toc">
   <ul align="center">
-    <summary><h2 style="display: inline-block"> Proyecto: NBAnalytic: Basket Science</h2></summary>
+    <summary><h2 style="display: inline-block"> NBAnalytic: Basket Science</h2></summary>
   </ul>
 </div>
 
 <!--horizontal divider(gradiant)-->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-# ¡Hola! 👋 DAA - Data Analytics Athletic 👨‍💻 Un Equipo de 5 Analistas de Datos | 📊 Nahuel - Ariel - Frank - Mariano - Carlos.
+# ¡Hola! 👋 DAA 
+AthletiQ Data Analytics 
+👨‍💻 Un Equipo de 5 Analistas de Datos 📊 💻
+<p align="left"> <a href="https://github.com/NahuelUnda" target="blank">Nahuel Undabarrena </a> </p>
+<p align="left"> <a href="https://github.com/ardev-21" target="blank">Ariel Beese </a> </p>
+<p align="left"> <a href="https://github.com/frankmerlod" target="blank">Frank Merlo</a> </p>
+<p align="left"> <a href="https://github.com/MarianTaliercio" target="blank">Mariano Taliercio</a> </p>
+<p align="left"> <a href="https://github.com/CIPC1999" target="blank">Carlos Prieto </a> </p>
 
 <!--Intro start-->
 
@@ -27,17 +34,15 @@ El propósito principal de este proyecto se enfoca en el ámbito del deporte pro
 - Python: Limpieza y análisis exploratorio de datos.
   - Pandas
   - NumPy
-  - Matplotlib / Seaborn
-  - pyodbc
+  - Matplotlib 
+  - Seaborn
   - sqlalchemy
   - os
   - shutil
   - time
-  - watchdog
   - dotenv
   - kaggle
 - Jupyter Notebook
-- Power BI
 
 ## 👨‍💻 Metodologías:
 
