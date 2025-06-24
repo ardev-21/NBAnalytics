@@ -1,4 +1,4 @@
 # Ignora los archivos relacionados a API keys
 .env
-
+.csv
 kaggle/
