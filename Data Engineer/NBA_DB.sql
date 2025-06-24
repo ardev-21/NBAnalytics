@@ -25,7 +25,7 @@ GO
 --DROP TABLE Game; -- 13
 --DROP TABLE Team; -- 14
 --DROP TABLE Player; -- 15
--- DROP TABLE Salaries; -- 
+--DROP TABLE Salaries; -- 
 
 -------------------- Creación de las tablas --------------------
 CREATE TABLE Player (
